@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SUDOKU</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/8.2.0/firebase-app.js"></script>
+
+  <!-- TODO: Add SDKs for Firebase products that you want to use
+        https://firebase.google.com/docs/web/setup#available-libraries -->
+  <script src="https://www.gstatic.com/firebasejs/8.2.0/firebase-analytics.js"></script>
+
+</head>
+
+<body>
+  <section class="navigation">
+    <nav class="navbar fixed-top navbar-expand navbar-dark bg-dark ">
+      <a class="navbar-brand" href="">SUDOKU</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link disabled" href="#"> <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" href="#"> </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" href="#"> </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="quit" href="#" tabindex="-1" aria-disabled="true">Exit?</a>
+          </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0 mx-lg-4">
+          <div class="timer">Time Remaining : &nbsp;</div>
+          <div class="timer" id="clock"></div>
+        </form>
+      </div>
+    </nav>
+  </section>
+
+
+  <section class="game-plate">
+    <div class="main-div">
+      <div class="main-container">
+        <div class="board">
+          <table id="injectTable" class="table"></table>
+        </div>
+        <div class="input-box">
+          <table class="table table-light">
+            <tbody>
+              <tr>
+                <th scope="row"><button id="num1">1</button></th>
+                <th scope="row"><button id="num2">2</button></th>
+                <th scope="row"><button id="num3">3</button></th>
+              </tr>
+              <tr>
+                <th scope="row"><button id="num4">4</button></th>
+                <th scope="row"><button id="num5">5</button></th>
+                <th scope="row"><button id="num6">6</button></th>
+              </tr>
+              <tr>
+                <th scope="row"><button id="num7">7</button></th>
+                <th scope="row"><button id="num8">8</button></th>
+                <th scope="row"><button id="num9">9</button></th>
+              </tr>
+              <tr>
+                <th scope="row"><button id="clear">C</button></th>
+                <th scope="row" colspan="2"><button id="check">&#8617;</button></th>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Modals -->
+  <!--Modal at Time Up-->
+  <div class="modal fade" id="timeUp" tabindex="-1" role="dialog" data-backdrop="static" data-keyboard="false"
+    aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">You Lose &#128532;</h5>
+        </div>
+        <div class="modal-body">
+          Your time is up!
+        </div>
+        <div class="modal-footer">
+          <button type="button" id="returnSuccess" class="btn btn-secondary" data-dismiss="modal">Return To Main Menu
+            &#128551;</button>
+          <button type="button" id="replaySuccess" class="btn btn-danger">Replay &#128512;</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--Modal (Empty Block Warning)-->
+  <div class="modal fade" id="emptyBlocks" tabindex="-1" role="dialog" data-backdrop="static" data-keyboard="false"
+    aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title text-danger" id="exampleModalLabel">Empty Block Warning !!! &#128532;</h5>
+        </div>
+        <div class="modal-body">
+          Fill All The Blocks
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">O K
+            &#128545;</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--Modal Result Pass-->
+  <div class="modal fade" id="finishED" tabindex="-1" role="dialog" data-backdrop="static" data-keyboard="false"
+    aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title text-success" id="exampleModalLabel">Hurray You Won! &#129299;</h5>
+        </div>
+        <div class="modal-body">
+          Congratulations!!! You Successfully Completed the Sudoku! &#128526;
+        </div>
+        <div class="modal-footer">
+          <button type="button" id="return" class="btn btn-secondary" data-dismiss="modal">Return To Main Menu
+            &#128551;</button>
+          <button type="button" id="replay" class="btn btn-success">Replay &#128512;</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--Modal Result Fail-->
+  <div class="modal fade" id="failed" tabindex="-1" role="dialog" data-backdrop="static" data-keyboard="false"
+    aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title text-success" id="exampleModalLabel">Oops! &#128563;</h5>
+        </div>
+        <div class="modal-body">
+          Something Wrong With Your Numbers! &#129488;
+        </div>
+        <div class="modal-footer">
+          <button type="button" id="return" class="btn btn-secondary" data-dismiss="modal">Try Again
+            &#128533;</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="text-center text-lg-start">
+    <!-- Copyright -->
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2); color: #fff">
+      Best of Luck! &nbsp;&nbsp; OR &nbsp;&nbsp;
+      <a class="text-light" href=".././index.html">( B A C K &nbsp;&nbsp;T O &nbsp;&nbsp;S T A R T)</a>
+    </div>
+    <!-- Copyright -->
+  </footer>
+
+
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.js"
+    integrity="sha512-Rd5Gf5A6chsunOJte+gKWyECMqkG8MgBYD1u80LOOJBfl6ka9CtatRrD4P0P5Q5V/z/ecvOCSYC8tLoWNrCpPg=="
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.js"
+    integrity="sha512-Rd5Gf5A6chsunOJte+gKWyECMqkG8MgBYD1u80LOOJBfl6ka9CtatRrD4P0P5Q5V/z/ecvOCSYC8tLoWNrCpPg=="
+    crossorigin="anonymous"></script>
+
+  <script src="../algoJs/timer.js"></script>
+  <script src="../algoJs/script.js"></script>
+
+  <!-- <script>
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    var firebaseConfig = {
+      apiKey: "AIzaSyC5NKp1VHAJW17LcR4Fks3L61T3jvB6xeU",
+      authDomain: "sudoku-app-d54fd.firebaseapp.com",
+      projectId: "sudoku-app-d54fd",
+      storageBucket: "sudoku-app-d54fd.appspot.com",
+      messagingSenderId: "160640721583",
+      appId: "1:160640721583:web:82738c73f89980b8196a5a",
+      measurementId: "G-VLNEXRE1W3"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+  </script> -->
+  <script src="../cdn-js/cdn.js"></script>
+
+</body>
+
+</html>

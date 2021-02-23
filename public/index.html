@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,600,700,800,900&display=swap"
+        rel="stylesheet">
+
+    <title>SUDOKU v0.0.1</title>
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+
+    <link rel="stylesheet" type="text/css" href="assets/css/font-awesome.css">
+
+    <link rel="stylesheet" href="assets/css/templatemo-breezed.css">
+
+    <link rel="stylesheet" href="assets/css/owl-carousel.css">
+
+    <link rel="stylesheet" href="assets/css/lightbox.css">
+
+    <link rel="stylesheet" href="./css/style.css">
+
+</head>
+
+<body>
+
+    <!-- ***** Preloader Start ***** -->
+    <div id="preloader">
+        <div class="jumper">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+    <!-- ***** Preloader End ***** -->
+
+
+    <!-- ***** Header Area Start ***** -->
+    <header class="header-area header-sticky">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <nav class="main-nav">
+                        <!-- ***** Logo Start ***** -->
+                        <a href="index.html" class="logo">
+                            .SUDOKU
+                        </a>
+                        <!-- ***** Logo End ***** -->
+                        <!-- ***** Menu Start ***** -->
+                        <ul class="nav">
+                            <li class="scroll-to-section"><a href="#top" class="active">Home</a></li>
+                            <li class="scroll-to-section"><a href="#about">Playzone</a></li>
+                            <li class="scroll-to-section"><a href="#solver">Solver</a></li>
+                            <!--<li class="submenu">
+                                <a href="javascript:;">Drop Down</a>
+                                <ul>
+                                    <li><a href="">About Us</a></li>
+                                    <li><a href="">Features</a></li>
+                                    <li><a href="">FAQ's</a></li>
+                                    <li><a href="">Blog</a></li>
+                                </ul>
+                            </li>
+                            <li class="scroll-to-section"><a href="#contact-us">Contact Us</a></li> -->
+                            <!-- <div class="search-icon">
+                                <a href="#search"><i class="fa fa-search"></i></a>
+                            </div> -->
+                        </ul>
+                        <a class='menu-trigger'>
+                            <span>Menu</span>
+                        </a>
+                        <!-- ***** Menu End ***** -->
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- ***** Header Area End ***** -->
+
+    <!-- ***** Search Area ***** -->
+    <div id="search">
+        <button type="button" class="close">×</button>
+        <form id="contact" action="#" method="get">
+            <fieldset>
+                <input type="search" name="q" placeholder="SEARCH KEYWORD(s)" aria-label="Search through site content">
+            </fieldset>
+            <fieldset>
+                <button type="submit" class="main-button">Search</button>
+            </fieldset>
+        </form>
+    </div>
+
+    <!-- ***** Main Banner Area Start ***** -->
+    <div class="main-banner header-text" id="top">
+        <div class="Modern-Slider">
+            <!-- Item -->
+            <div class="item">
+                <div class="img-fill">
+                    <img src="assets/images/slide-01.jpg" alt="">
+                    <div class="text-content">
+                        <h3>Let's Play with your Brain</h3>
+                        <h5>Welcome to SUDOKU v0.0.1</h5>
+                        <a href="#" class="main-stroked-button">Github <i class="fa fa-github"></i></a>
+                        <a href="#about" class="main-filled-button">Start Playing</a>
+
+                    </div>
+                </div>
+            </div>
+            <!-- // Item -->
+        </div>
+    </div>
+    <div class="scroll-down scroll-to-section"><a href="#about"><i class="fa fa-arrow-down"></i></a></div>
+    <!-- ***** Main Banner Area End ***** -->
+
+    <!-- ***** Play Zone Starts ***** -->
+    <section class="section" id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-xs-12">
+                    <div class="left-text-content">
+                        <div class="section-heading">
+                            <h6>In Game Difficulty Level</h6>
+                            <h2>Choose Your Level Of Difficulty</h2>
+                        </div>
+                        <div class="row">
+                            <!-- <div class="col-md-6 col-sm-6">
+                                <div class="service-item">
+                                    <img src="assets/images/service-item-01.png" alt="">
+                                    <h4 id="threebythree">3 X 3 Matrix</h4>
+                                </div>
+                            </div> -->
+                           <!--  <div class="col-md-6 col-sm-6">
+                                <div class="service-item">
+                                    <img src="assets/images/service-item-01.png" alt="">
+                                    <h4 id="fourbyfour">4 X 4 Matrix</h4>
+                                </div>
+                            </div> -->
+                            <div class="col-md-6 col-sm-6">
+                                <div class="service-item">
+                                    <img src="assets/images/service-item-01.png" alt="">
+                                    <h4 id="ninebynine">9 X 9 Matrix</h4>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-xs-12">
+                    <div class="right-text-content">
+                        <p>
+                            <br><br>
+                            <b>Sudoku Query Generation Algorithm Simulator v0.0.1</b> <br><br>
+
+                            Choose a dificulty level for yourself from the menu aside.
+                            Each matrix format has a specific time for you to complete.
+                            <br><br>
+
+                            3 X 3 has 5 min duration. <br>
+                            4 X 4 has 10 min duration. <br>
+                            9 X 9 has 15 min duration. <br><br>
+                            <b>Best of luck...! </b>
+
+                            <!-- <a rel="nofollow noopener" href="https://templatemo.com/tm-543-breezed"
+                                target="_parent">Breezed HTML Template</a> is provided by TemplateMo for absolutely free
+                            of charge. You can download, edit and use this for your non-commercial and commercial
+                            websites.
+                            <br><br>Redistributing this template as a downloadable ZIP file on any template collection
+                            website is strictly prohibited. You will need to talk to us if you want to redistribute this
+                            template. Thank you.
+                            <br><br>This is a Bootstrap v4.3.1 CSS layout. Do you like it? You can feel free to <a
+                                rel="nofollow noopener" href="https://templatemo.com/contact" target="_parent">talk to
+                                us</a> if you have anything. -->
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ***** Play Zone Ends ***** -->
+
+    <!-- ***** Sudoku Solution Area Starts ***** -->
+    <section class="section solver" id="about">
+        <div class="container" id="solver">
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-xs-12">
+                    <div class="left-text-content">
+                        <div class="section-heading">
+                            <h6>Get Your Matrix Solution</h6>
+                            <h2>Choose Order Of SUDOKU Matrix</h2>
+                        </div>
+                        <div class="row">
+                            <!-- <div class="col-md-6 col-sm-6">
+                                <div class="service-item">
+                                    <img src="assets/images/service-item-01.png" alt="">
+                                    <h4 id="threebythree1">3 X 3 Matrix</h4>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-sm-6">
+                                <div class="service-item">
+                                    <img src="assets/images/service-item-01.png" alt="">
+                                    <h4 id="fourbyfour1">4 X 4 Matrix</h4>
+                                </div>
+                            </div> -->
+                            <div class="col-md-6 col-sm-6">
+                                <div class="service-item">
+                                    <img src="assets/images/service-item-01.png" alt="">
+                                    <h4 id="ninebynine1">9 X 9 Matrix</h4>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <a href="#" class="main-button-icon">
+                                    About Sudoku <b style="text-transform: lowercase;">v</b>0.0.1<i
+                                        class="fa fa-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-xs-12">
+                    <div class="right-text-content">
+                        <p>
+                            <br><br>
+                            <b>Sudoku Query Generation Algorithm Simulator v0.0.1</b> <br><br>
+
+                            Choose a matrix order for yourself from the menu aside.
+                            And pass your query to the table in the next window for your solution
+                            <br><br>
+
+                            <!-- <a rel="nofollow noopener" href="https://templatemo.com/tm-543-breezed"
+                                target="_parent">Breezed HTML Template</a> is provided by TemplateMo for absolutely free
+                            of charge. You can download, edit and use this for your non-commercial and commercial
+                            websites.
+                            <br><br>Redistributing this template as a downloadable ZIP file on any template collection
+                            website is strictly prohibited. You will need to talk to us if you want to redistribute this
+                            template. Thank you.
+                            <br><br>This is a Bootstrap v4.3.1 CSS layout. Do you like it? You can feel free to <a
+                                rel="nofollow noopener" href="https://templatemo.com/contact" target="_parent">talk to
+                                us</a> if you have anything. -->
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ***** Sudoku Solution Area Ends ***** -->
+
+
+    <!-- jQuery -->
+    <script src="assets/js/jquery-2.1.0.min.js"></script>
+
+    <!-- Bootstrap -->
+    <script src="assets/js/popper.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+
+    <!-- Plugins -->
+    <script src="assets/js/owl-carousel.js"></script>
+    <script src="assets/js/scrollreveal.min.js"></script>
+    <script src="assets/js/waypoints.min.js"></script>
+    <script src="assets/js/jquery.counterup.min.js"></script>
+    <script src="assets/js/imgfix.min.js"></script>
+    <script src="assets/js/slick.js"></script>
+    <script src="assets/js/lightbox.js"></script>
+    <script src="assets/js/isotope.js"></script>
+
+    <!-- Global Init -->
+    <script src="assets/js/custom.js"></script>
+
+    <script>
+
+        $(function () {
+            var selectedClass = "";
+            $("p").click(function () {
+                selectedClass = $(this).attr("data-rel");
+                $("#portfolio").fadeTo(50, 0.1);
+                $("#portfolio div").not("." + selectedClass).fadeOut();
+                setTimeout(function () {
+                    $("." + selectedClass).fadeIn();
+                    $("#portfolio").fadeTo(50, 1);
+                }, 500);
+
+            });
+        });
+
+        //Playzone Click Actions
+        /*   document.getElementById('threebythree').addEventListener("click", () => {
+              localStorage.setItem("tableOrder", "3");
+              location.replace("./pages/playground.html");
+          }); */
+
+        /* document.getElementById('fourbyfour').addEventListener("click", () => {
+            localStorage.setItem("tableOrder", "4");
+            location.replace("./pages/playground.html");
+        }); */
+
+        document.getElementById('ninebynine').addEventListener("click", () => {
+            localStorage.setItem("tableOrder", "9");
+            location.replace("./pages/playground.html");
+        });
+
+        //Solver Click Actions
+        /* document.getElementById('threebythree1').addEventListener("click", () => {
+            localStorage.setItem("tableOrder", "3");
+            location.replace("./pages/sudokuSolver.html");
+        });
+ */
+        /* document.getElementById('fourbyfour1').addEventListener("click", () => {
+            localStorage.setItem("tableOrder", "4");
+            location.replace("./pages/sudokuSolver.html");
+        }); */
+
+        document.getElementById('ninebynine1').addEventListener("click", () => {
+            localStorage.setItem("tableOrder", "9");
+            location.replace("./pages/sudokuSolver.html");
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,190 @@
+.main-div {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 10px;
+    padding-top: 100px;
+}
+
+.navigation {
+    margin-bottom: 50px;
+}
+
+.main-container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.navbar-brand {
+    font-size: 2rem;
+}
+
+.board {
+    width: 100%;
+    margin: 2px;
+}
+
+.input-box {
+    width: 100%;
+    padding: 5%;
+    background-color: #005566;
+}
+
+button {
+    width: 100%;
+    margin: 0;
+    border: 2px solid #000000;
+    height: 50px;
+    background-color: #fff;
+}
+
+.input-box th {
+    font-size: xx-large;
+    padding: 0;
+    background-color: #220055;
+}
+
+tr {
+    padding: 0;
+}
+
+th {
+    padding: 0;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+button:hover {
+    color: #fff;
+    background-color: greenyellow;
+    transition: 0.2s;
+}
+
+button:active {
+    color: #fff;
+    background-color: red;
+    transition: 0.3s;
+}
+
+.board table,
+th {
+    border: 3px solid #000;
+}
+
+.board table,
+th {
+    border: 3px solid #000;
+}
+
+.navbar-brand {
+    color: #fff;
+}
+
+.navbar-brand:hover {
+    color: grey;
+}
+
+.fixed-digit {
+    background-color: #212121;
+    color: #fff;
+}
+
+.float-digit {
+    background-color: greenyellow;
+    color: #000;
+}
+
+.float-digit:hover {
+    background-color: #220055;
+    color: #fff;
+}
+
+.float-digit:focus {
+    color: #fff;
+    background-color: red;
+}
+
+h4 {
+    cursor: pointer;
+    transition: 1s;
+}
+
+h4:hover {
+    cursor: pointer;
+    color: red;
+    text-decoration: underline;
+    transition: 1s;
+}
+
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: red;
+    color: white;
+    text-align: center;
+    background-color: gray;
+}
+
+.timer {
+    color: white;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.timer-clock {
+    color: white;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+
+@media (max-width: 1080px) {
+
+    .main-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .board table,
+    th {
+        border: 3px solid #000;
+    }
+
+    .board table,
+    th {
+        border: 3px solid #000;
+    }
+
+    .navigation {
+        margin-bottom: 0px;
+    }
+}
+
+@media (max-width: 720px) {
+
+    .main-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .board table,
+    th {
+        border: 2px solid #000;
+    }
+
+    .board table,
+    th {
+        border: 2px solid #000;
+    }
+
+    .navigation {
+        margin-bottom: 0px;
+    }
+}
