@@ -103,7 +103,8 @@
                     <div class="text-content">
                         <h3>Let's Play with your Brain</h3>
                         <h5>Welcome to SUDOKU v0.0.1</h5>
-                        <a href="#" class="main-stroked-button">Github <i class="fa fa-github"></i></a>
+                        <a href="https://github.com/nikhil1025/sudoko-web" class="main-stroked-button">Github <i
+                                class="fa fa-github"></i></a>
                         <a href="#about" class="main-filled-button">Start Playing</a>
 
                     </div>
@@ -132,7 +133,7 @@
                                     <h4 id="threebythree">3 X 3 Matrix</h4>
                                 </div>
                             </div> -->
-                           <!--  <div class="col-md-6 col-sm-6">
+                            <!--  <div class="col-md-6 col-sm-6">
                                 <div class="service-item">
                                     <img src="assets/images/service-item-01.png" alt="">
                                     <h4 id="fourbyfour">4 X 4 Matrix</h4>
@@ -211,7 +212,7 @@
                                 </div>
                             </div>
                             <div class="col-md-12">
-                                <a href="#" class="main-button-icon">
+                                <a id="inactive-reference" href="#" class="main-button-icon">
                                     About Sudoku <b style="text-transform: lowercase;">v</b>0.0.1<i
                                         class="fa fa-arrow-right"></i>
                                 </a>
@@ -312,8 +313,13 @@
         }); */
 
         document.getElementById('ninebynine1').addEventListener("click", () => {
-            localStorage.setItem("tableOrder", "9");
-            location.replace("./pages/sudokuSolver.html");
+            /* localStorage.setItem("tableOrder", "9");
+            location.replace("./pages/sudokuSolver.html"); */
+            alert("Under Progress");
+
+        });
+        document.getElementById('inactive-reference').addEventListener("click", () => {
+            alert("Under Progress");
         });
     </script>
 </body>
