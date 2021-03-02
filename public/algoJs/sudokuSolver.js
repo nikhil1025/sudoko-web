@@ -265,25 +265,53 @@ function queryRender() {
       // Adding table header (***actual digits here***) with digits
       tableRow.appendChild(tableHeader);
     }
-
     tableInfo.appendChild(tableRow);
   }
-
   // Final Injection of SUDOKU_ARRAY Information
   document.getElementById("extractTable").appendChild(tableInfo);
 }
 
-
 // Function to check Solution
 function checkSolution(theBoard) {
   if (theBoard !== false) {
-    
+    renderingTheSuccessfulMatrix(theBoard);
+    $("#finishED").modal("show");
   } else {
-    console.log(theBoard);
+    $("#failed").modal("show");
   }
 }
 
-// Returning the successful Matrix
+/*--------------------------- Returning the successful Matrix---------------------- */
+
+function renderingTheSuccessfulMatrix(finalresult) {
+
+
+  if (true) {
+    var child = document.getElementById("table-body");
+    child.innerHTML = " ";
+
+    for (let i = 0; i < 9; i++) {
+      tableRow = document.createElement("TR");
+
+      for (j = 0; j < tableOrder; j++) {
+        // Real digits
+        var tableHeader = document.createElement("TH");
+
+        tableHeader.setAttribute("id", "num");
+        tableHeader.setAttribute("class", "float-digit");
+        tableHeader.setAttribute("tabindex", 0);
+        tableHeader.setAttribute("scope", "row");
+        tableHeader.innerHTML = finalresult[i][j];
+
+        // Adding table header (***actual digits here***) with digits
+        tableRow.appendChild(tableHeader);
+      }
+      child.appendChild(tableRow);
+    }
+  }
+}
+
+/*--------------------------- Returning the successful Matrix---------------------- */
 
 //A function for all mouse based operations
 function mouseActios() {
@@ -303,7 +331,7 @@ function mouseActios() {
   // NUMPAD 1 actions
   document.getElementById("num1").addEventListener("click", () => {
     if (selectedBlock != null) {
-      selectedBlock.innerHTML = "1";
+      selectedBlock.innerHTML = 1;
       selectedBlock.setAttribute("style", "background-color: darkgreen");
     }
   });
@@ -311,7 +339,7 @@ function mouseActios() {
   // NUMPAD 2 actions
   document.getElementById("num2").addEventListener("click", () => {
     if (selectedBlock != null) {
-      selectedBlock.innerHTML = "2";
+      selectedBlock.innerHTML = 2;
       selectedBlock.setAttribute("style", "background-color: darkgreen");
     }
   });
@@ -319,7 +347,7 @@ function mouseActios() {
   // NUMPAD 3 actions
   document.getElementById("num3").addEventListener("click", () => {
     if (selectedBlock != null) {
-      selectedBlock.innerHTML = "3";
+      selectedBlock.innerHTML = 3;
       selectedBlock.setAttribute("style", "background-color: darkgreen");
     }
   });
@@ -327,7 +355,7 @@ function mouseActios() {
   // NUMPAD 4 actions
   document.getElementById("num4").addEventListener("click", () => {
     if (selectedBlock != null) {
-      selectedBlock.innerHTML = "4";
+      selectedBlock.innerHTML = 4;
       selectedBlock.setAttribute("style", "background-color: darkgreen");
     }
   });
@@ -335,7 +363,7 @@ function mouseActios() {
   // NUMPAD 5 actions
   document.getElementById("num5").addEventListener("click", () => {
     if (selectedBlock != null) {
-      selectedBlock.innerHTML = "5";
+      selectedBlock.innerHTML = 5;
       selectedBlock.setAttribute("style", "background-color: darkgreen");
     }
   });
@@ -343,7 +371,7 @@ function mouseActios() {
   // NUMPAD 6 actions
   document.getElementById("num6").addEventListener("click", () => {
     if (selectedBlock != null) {
-      selectedBlock.innerHTML = "6";
+      selectedBlock.innerHTML = 6;
       selectedBlock.setAttribute("style", "background-color: darkgreen");
     }
   });
@@ -351,7 +379,7 @@ function mouseActios() {
   // NUMPAD 7 actions
   document.getElementById("num7").addEventListener("click", () => {
     if (selectedBlock != null) {
-      selectedBlock.innerHTML = "7";
+      selectedBlock.innerHTML = 7;
       selectedBlock.setAttribute("style", "background-color: darkgreen");
     }
   });
@@ -359,7 +387,7 @@ function mouseActios() {
   // NUMPAD 8 actions
   document.getElementById("num8").addEventListener("click", () => {
     if (selectedBlock != null) {
-      selectedBlock.innerHTML = "8";
+      selectedBlock.innerHTML = 8;
       selectedBlock.setAttribute("style", "background-color: darkgreen");
     }
   });
@@ -367,7 +395,7 @@ function mouseActios() {
   // NUMPAD 9 actions
   document.getElementById("num9").addEventListener("click", () => {
     if (selectedBlock != null) {
-      selectedBlock.innerHTML = "9";
+      selectedBlock.innerHTML = 9;
       selectedBlock.setAttribute("style", "background-color: darkgreen");
     }
   });
@@ -375,7 +403,7 @@ function mouseActios() {
   // NUMPAD C actions
   document.getElementById("clear").addEventListener("click", () => {
     if (selectedBlock != null) {
-      selectedBlock.innerHTML = "0";
+      selectedBlock.innerHTML = 0;
       selectedBlock.removeAttribute("style");
     }
   });
@@ -422,20 +450,36 @@ queryRender();
 mouseActios();
 
 //Setting Timeout Modal Button Actions
-document.getElementById("returnSuccess").addEventListener("click", () => {
-  location.replace("../index.html");
-});
-document.getElementById("replaySuccess").addEventListener("click", () => {
-  location.reload();
-});
 document.getElementById("return").addEventListener("click", () => {
   location.replace("../index.html");
 });
 document.getElementById("replay").addEventListener("click", () => {
   location.reload();
 });
-document.getElementById("quit").addEventListener("click", () => {
-  if (confirm("Are You Sure To exit?")) {
-    location.replace("../index.html");
+document.getElementById("retry").addEventListener("click", () => {
+  $("#failed").modal("hide");
+});
+
+document.getElementById("clearAll").addEventListener("click", () => {
+  var child = document.getElementById("table-body");
+  child.innerHTML = " ";
+
+  for (let i = 0; i < 9; i++) {
+    tableRow = document.createElement("TR");
+
+    for (j = 0; j < tableOrder; j++) {
+      // Real digits
+      var tableHeader = document.createElement("TH");
+
+      tableHeader.setAttribute("id", "num");
+      tableHeader.setAttribute("class", "float-digit");
+      tableHeader.setAttribute("tabindex", 0);
+      tableHeader.setAttribute("scope", "row");
+      tableHeader.innerHTML = 0;
+
+      // Adding table header (***actual digits here***) with digits
+      tableRow.appendChild(tableHeader);
+    }
+    child.appendChild(tableRow);
   }
 });

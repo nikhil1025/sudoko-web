@@ -74,8 +74,9 @@
                 <th scope="row"><button id="num9">9</button></th>
               </tr>
               <tr>
-                <th scope="row"><button id="clear">C</button></th>
-                <th scope="row" colspan="2"><button id="check">CHECK</button></th>
+                <th scope="row"><button id="clear" type="button" data-toggle="tooltip" data-placement="left" title="Clear Element">C</button></th>
+                <th scope="row"><button id="check">CHECK</button></th>
+                <th scope="row"><button id="clearAll" type="button" data-toggle="tooltip" data-placement="left" title="Reset Matrix">E</button></th>
               </tr>
             </tbody>
           </table>
@@ -85,61 +86,23 @@
   </section>
 
 
+
   <!-- Modals -->
-  <!--Modal at Time Up-->
-  <div class="modal fade" id="timeUp" tabindex="-1" role="dialog" data-backdrop="static" data-keyboard="false"
-    aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">You Lose &#128532;</h5>
-        </div>
-        <div class="modal-body">
-          Your time is up!
-        </div>
-        <div class="modal-footer">
-          <button type="button" id="returnSuccess" class="btn btn-secondary" data-dismiss="modal">Return To Main Menu
-            &#128551;</button>
-          <button type="button" id="replaySuccess" class="btn btn-danger">Replay &#128512;</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!--Modal (Empty Block Warning)-->
-  <div class="modal fade" id="emptyBlocks" tabindex="-1" role="dialog" data-backdrop="static" data-keyboard="false"
-    aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title text-danger" id="exampleModalLabel">Empty Block Warning !!! &#128532;</h5>
-        </div>
-        <div class="modal-body">
-          Fill All The Blocks
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">O K
-            &#128545;</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
   <!--Modal Result Pass-->
   <div class="modal fade" id="finishED" tabindex="-1" role="dialog" data-backdrop="static" data-keyboard="false"
     aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title text-success" id="exampleModalLabel">Hurray You Won! &#129299;</h5>
+          <h5 class="modal-title text-success" id="exampleModalLabel">Successful !! &#129299;</h5>
         </div>
         <div class="modal-body">
-          Congratulations!!! You Successfully Completed the Sudoku! &#128526;
+          Hey There! Your SUDOKU Table Is Complete &#128526;
         </div>
         <div class="modal-footer">
           <button type="button" id="return" class="btn btn-secondary" data-dismiss="modal">Return To Main Menu
             &#128551;</button>
-          <button type="button" id="replay" class="btn btn-success">Replay &#128512;</button>
+          <button type="button" id="replay" class="btn btn-success">Reset &#128512;</button>
         </div>
       </div>
     </div>
@@ -154,10 +117,10 @@
           <h5 class="modal-title text-success" id="exampleModalLabel">Oops! &#128563;</h5>
         </div>
         <div class="modal-body">
-          Something Wrong With Your Numbers! &#129488;
+          This Matrix is not a valid one &#129488;
         </div>
         <div class="modal-footer">
-          <button type="button" id="return" class="btn btn-secondary" data-dismiss="modal">Try Again
+          <button type="button" id="retry" class="btn btn-secondary" data-dismiss="modal">Try Again
             &#128533;</button>
         </div>
       </div>
