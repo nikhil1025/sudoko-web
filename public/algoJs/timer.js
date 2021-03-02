@@ -1,8 +1,8 @@
 
 const tableOrder = parseInt(localStorage.getItem("tableOrder"));
-localStorage.removeItem("tableOrder");
 
 let startingMinutes, time, confirmInitiate = true;
+
 
 //Setting time as per difficulty level
 if (tableOrder == 3) {

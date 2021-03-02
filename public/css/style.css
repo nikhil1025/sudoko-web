@@ -149,10 +149,6 @@ footer {
 
 @media (max-width: 1080px) {
 
-    .main-div {
-        margin: 100px 0 100px 0;
-    }
-
     .main-container {
         flex-direction: column;
         text-align: center;
@@ -175,10 +171,6 @@ footer {
 }
 
 @media (max-width: 720px) {
-
-    .main-div {
-        margin: 100px 0 100px 0;
-    }
 
     .main-container {
         flex-direction: column;

@@ -459,6 +459,10 @@ document.getElementById("replay").addEventListener("click", () => {
 document.getElementById("retry").addEventListener("click", () => {
   $("#failed").modal("hide");
 });
+document.getElementById("showdata").addEventListener("click", () => {
+  $("#finishED").modal("hide");
+});
+
 
 document.getElementById("clearAll").addEventListener("click", () => {
   var child = document.getElementById("table-body");

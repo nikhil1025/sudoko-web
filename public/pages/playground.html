@@ -5,6 +5,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SUDOKU</title>
+  <link rel="shortcut icon" href="../assets/images/favicon.ico">
+  
   <link rel="stylesheet" href="../css/style.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
     integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
@@ -28,17 +30,9 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link disabled" href="#"> <span class="sr-only">(current)</span></a>
-          </li>
           <li class="nav-item">
-            <a class="nav-link disabled" href="#"> </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link disabled" href="#"> </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" id="quit" href="#" tabindex="-1" aria-disabled="true">Exit?</a>
+            <a class="nav-link" id="solverExit" href="#" tabindex="-1" aria-disabled="true">
+              <button class="btn btn-outline-light px-10 py-0">Exit</button></a>
           </li>
         </ul>
         <form class="form-inline my-2 my-lg-0 mx-lg-4">
@@ -165,11 +159,33 @@
     </div>
   </div>
 
+  
+  <!--Modal Exit-->
+  <div class="modal fade" id="exitboard" tabindex="-1" role="dialog" data-backdrop="static" data-keyboard="false"
+    aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title text-success" id="exampleModalLabel">Oops! &#128563;</h5>
+        </div>
+        <div class="modal-body">
+          Are You Sure To Exit ? &#129488;
+        </div>
+        <div class="modal-footer">
+          <button type="button" id="returnNow" class="btn btn-secondary" data-dismiss="modal">Yes
+            &#128551;</button>
+          <button type="button" id="exitHide" class="btn btn-success">No &#128512;</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
   <footer class="text-center text-lg-start">
     <!-- Copyright -->
     <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2); color: #fff">
-      Best of Luck! &nbsp;&nbsp; OR &nbsp;&nbsp;
-      <a class="text-light" href=".././index.html">( B A C K &nbsp;&nbsp;T O &nbsp;&nbsp;S T A R T)</a>
+      S U D O K U ( v0.0.1 ) &nbsp;&nbsp;&nbsp;
+      <a class="text-warning" href=".././index.html"> B A C K &nbsp;&nbsp;T O &nbsp;&nbsp;S T A R T</a>
     </div>
     <!-- Copyright -->
   </footer>

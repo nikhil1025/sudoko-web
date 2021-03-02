@@ -1,4 +1,3 @@
-localStorage.removeItem("tableOrder");
 
 function fetchQuestion() {
   return;
@@ -294,8 +293,15 @@ document.getElementById("return").addEventListener("click", () => {
 document.getElementById("replay").addEventListener("click", () => {
   location.reload();
 });
-document.getElementById("quit").addEventListener("click", () => {
-  if(confirm("Are You Sure To exit?")){
-    location.replace("../index.html");
-  }
+
+
+document.getElementById("solverExit").addEventListener('click', () => {
+  $("#exitboard").modal("show");
 });
+document.getElementById("returnNow").addEventListener("click", () => {
+  location.replace("../index.html");
+});
+document.getElementById("exitHide").addEventListener("click", () => {
+  $("#exitboard").modal("hide");
+});
+

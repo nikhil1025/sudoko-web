@@ -2,11 +2,16 @@
 const tableOrder = parseInt(localStorage.getItem("tableOrder"));
 //localStorage.removeItem("tableOrder");
 
-document.getElementById("solverExit").addEventListener('click', () =>{
-    if(confirm("Are you sure you want to exit?")){
-        location.replace("../index.html");
-    }
+document.getElementById("solverExit").addEventListener('click', () => {
+    $("#exitboard").modal("show");
 });
+document.getElementById("returnNow").addEventListener("click", () => {
+    location.replace("../index.html");
+});
+document.getElementById("exitHide").addEventListener("click", () => {
+    $("#exitboard").modal("hide");
+});
+
 
 let startingMinutes, time, confirmInitiate = true;
 
